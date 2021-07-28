@@ -17,7 +17,11 @@ const TodoList: React.FC = () => {
         },
         [],
     )
-    console.log({todos: state.todos});
+
+    React.useEffect(() => {
+        console.log('rendered TodoList');
+        console.log({todos: state.todos});
+    });
     
     return (
         <div>
@@ -32,7 +36,7 @@ const TodoList: React.FC = () => {
                 <input value={state.query} onChange={setQuery} />
             </div>
             <div>
-                <button onClick={getRandomNumber}>Generate Random Number</button>
+                <button onClick={getRandomNumber}>Generate My Random Number</button>
             </div>
             <div>
                 My random number: {state.randomNumber}

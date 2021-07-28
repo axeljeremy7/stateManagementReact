@@ -26,6 +26,12 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
   const delTodo = () => {
     dispatch({ type: 'DELETE_TODO', id });
   };
+  const getRandomNumber = React.useCallback(
+    () => {
+        dispatch({ type: 'SET_RANDOM_NUMBER' });
+    },
+    [],
+)
   return (
     <li ref={useFlasher()}>
       <input
@@ -40,8 +46,11 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
       >
         {completed ? title : renderHighlight(title, state.query)}
       </span>
-      <span> Other Random Number: {Math.random()}</span>
+      <span> |  Not my Random Number: {Math.random()}</span>
+      <span/>
       <button onClick={delTodo}>Delete</button>
+      <span/>
+      <button onClick={getRandomNumber}>Generate My Random Number</button>
     </li>
   );
 };

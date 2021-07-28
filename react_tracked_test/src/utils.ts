@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 
 export const useFlasher = () => {
   const ref = useRef<HTMLLIElement>(null);
-  useEffect(() => {
+  useEffect(() => {      
     if (!ref.current) return;
     ref.current.setAttribute(
       'style',

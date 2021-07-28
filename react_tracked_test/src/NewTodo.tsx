@@ -11,6 +11,7 @@ const NewTodo: React.FC = () => {
     dispatch({ type: 'ADD_TODO', title: text });
     setText('');
   };
+  
   return (
     <li ref={useFlasher()}>
       <input

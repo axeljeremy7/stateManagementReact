@@ -50,7 +50,7 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
       <span/>
       <button onClick={delTodo}>Delete</button>
       <span/>
-      <button onClick={getRandomNumber}>Generate My Random Number</button>
+      <button onClick={getRandomNumber}>Generate My Random Number #2</button>
     </li>
   );
 };

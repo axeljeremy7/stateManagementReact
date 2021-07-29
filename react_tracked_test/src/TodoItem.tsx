@@ -51,6 +51,7 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
         {completed ? title : renderHighlight(title, state.query)}
       </span>
       <span> |  Not my Random Number: {Math.random()}</span>
+      <span> |  {JSON.stringify({completed})}</span>
       <span/>
       <button onClick={delTodo}>Delete</button>
       <span/>
@@ -58,8 +59,8 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
     </li>
   );
 };
-function propsAreEqual(prev: any, next: any) {
-    return prev.id === next.id;
-}
-const MemoizedTodoItem = React.memo(TodoItem, propsAreEqual);
-export default MemoizedTodoItem;
+// function propsAreEqual(prev: any, next: any) {
+//     return prev.id === next.id;
+// }
+// const MemoizedTodoItem = React.memo(TodoItem, propsAreEqual);
+export default React.memo(TodoItem);

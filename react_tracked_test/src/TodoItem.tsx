@@ -32,11 +32,15 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
     },
     [],
 )
+  React.useEffect(() => {
+      console.log('TodoItem rendered.');
+      
+  }, [])
   return (
     <li ref={useFlasher()}>
       <input
         type="checkbox"
-        checked={!!completed}
+        defaultChecked={!!completed}
         onChange={() => dispatch({ type: 'TOGGLE_TODO', id })}
       />
       <span
@@ -54,5 +58,8 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
     </li>
   );
 };
-
-export default React.memo(TodoItem);
+function propsAreEqual(prev: any, next: any) {
+    return prev.id === next.id;
+}
+const MemoizedTodoItem = React.memo(TodoItem, propsAreEqual);
+export default MemoizedTodoItem;

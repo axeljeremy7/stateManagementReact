@@ -33,9 +33,9 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
     [],
 )
   React.useEffect(() => {
-      console.log('TodoItem rendered.');
-      
-  }, [])
+      console.log('TodoItem rendered.');   
+      console.log({id, title, completed});
+  })
   return (
     <li ref={useFlasher()}>
       <input

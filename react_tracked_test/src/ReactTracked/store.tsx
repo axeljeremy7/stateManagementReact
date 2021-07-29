@@ -33,9 +33,12 @@ const initialState: State = {
 let nextId = 4;
 
 const reducer = (state: State, action: Action): State => {
+    console.log(action);
     switch (action.type) {
         case 'SET_RANDOM_NUMBER':
-            return { ...state, randomNumber: Math.random() };
+            let n =  Math.random() ;
+            console.log(n);
+            return { ...state, randomNumber: n };
         case 'ADD_TODO':
             return {
                 ...state,

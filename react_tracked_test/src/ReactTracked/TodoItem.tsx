@@ -1,5 +1,5 @@
 import * as React from 'react';
-import OtherRandom from './OtherRandom';
+// import OtherRandom from './OtherRandom';
 import { useDispatch, useTrackedState, TodoType } from './store';
 import { useFlasher } from './utils';
 
@@ -32,6 +32,7 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
         },
         [dispatch],
     )
+    console.log('TodoItem');
     React.useEffect(() => {
         console.log('Render TodoItem');
     })
@@ -49,7 +50,7 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
             >
                 {completed ? title : renderHighlight(title, state.query)}
             </span>
-            <OtherRandom />
+            {/* <OtherRandom /> */}
             <span> |  {JSON.stringify({ completed: !!completed })}</span>
             <span />
             <button onClick={delTodo}>Delete</button>
@@ -62,4 +63,6 @@ const TodoItem: React.FC<Props> = ({ id, title, completed }) => {
 //     return prev.id === next.id;
 // }
 // const MemoizedTodoItem = React.memo(TodoItem, propsAreEqual);
+
 export default React.memo(TodoItem);
+// export default TodoItem;

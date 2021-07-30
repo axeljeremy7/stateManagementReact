@@ -25,6 +25,7 @@ const initialState: State = {
         { id: 1, title: 'Wash dishes' },
         { id: 2, title: 'Study JS' },
         { id: 3, title: 'Buy ticket' },
+        { id: 4, title: 'Drink water' },
     ],
     query: '',
     randomNumber: Math.random(),

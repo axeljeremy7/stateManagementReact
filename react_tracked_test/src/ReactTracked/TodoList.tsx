@@ -7,6 +7,7 @@ import RandomNumber from './RandomNumber';
 
 const TodoList: React.FC = () => {
     const state = useTrackedState();
+    console.log('TodoList');
     React.useEffect(() => {
         console.log('Render TodoList');
     });

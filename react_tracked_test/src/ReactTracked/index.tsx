@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Query from './Query';
-import RandomNumber from './RandomNumber';
+import OtherRandom from './OtherRandom';
+// import Query from './Query';
+// import RandomNumber from './RandomNumber';
 import ReactTracked from './ReactTracked';
 
 import { Provider } from './store';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
             <TodoList />
             {/* <Query /> */}
             {/* <RandomNumber /> */}
+            <OtherRandom />
         </Provider>
     </ReactTracked>
 }
